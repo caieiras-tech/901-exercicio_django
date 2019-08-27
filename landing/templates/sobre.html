@@ -1,21 +1,17 @@
+{% extends 'shared/layout.html' %}
 
 {% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{% static 'estilo.css' %}">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Sobre Comida</h1>
-    <p>As <strong>comidas</strong> da região</p>
-    {% for item in salada_de_frutas %}
-        <p>{{item}}</p>
-    {% endfor %}
-    {{batatinha}}
-    {{status}}
-</body>
-</html>
+
+{% block conteudo %}
+
+<h1>Sobre Comida</h1>
+<p>As <strong>comidas</strong> da região</p>
+{% for item in salada_de_frutas %}
+    <p>{{item}}</p>
+{% endfor %}
+{{batatinha}}
+{{status}}
+
+{% include 'shared/video.html' %}
+
+{% endblock %}
